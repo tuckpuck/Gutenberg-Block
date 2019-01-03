@@ -7,7 +7,13 @@ wp.blocks.registerBlockType("brad/borderbox", {
         color: {type: "string"},
     },
     edit: function(props){
-        wp.element.createElement(
+        function updateContent(event){
+            props.setAttributes({
+                content: event.target.value
+            })
+        }
+
+        return wp.element.createElement(
             "div",
             null,
             wp.element.createElement(
