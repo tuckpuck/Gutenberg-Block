@@ -31,6 +31,10 @@ wp.blocks.registerBlockType("tucker/borderbox", {
         );
     },
     save: function(props){
-        return null;
+        return wp.element.createElement(
+            "h3",
+            { style: { border: "5px solid " + props.attributes.color } },
+            props.attributes.content
+        );
     }
 })
