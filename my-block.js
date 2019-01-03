@@ -23,8 +23,8 @@ wp.blocks.registerBlockType("tucker/borderbox", {
             null,
             wp.element.createElement(
                 "h3",
-                null,
-                "Your Cool Border Box"
+                { style: { color: props.attributes.color } },
+                props.attributes.content
             ),
             wp.element.createElement("input", { type: "text", value: props.attributes.content, onChange: updateContent }),
             wp.element.createElement(wp.components.ColorPicker, { color: props.attributes.color, onChangeComplete: updateColor })
